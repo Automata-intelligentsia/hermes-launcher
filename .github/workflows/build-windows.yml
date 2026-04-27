@@ -43,7 +43,6 @@ jobs:
         path: dist/QuickLaunch-Windows/
     
     - name: Create Release ZIP
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: |
         cd dist
         Compress-Archive -Path QuickLaunch-Windows\* -DestinationPath QuickLaunch-Windows.zip
