@@ -40,6 +40,13 @@ cd hermes-launcher
 python3 hermes_quick_launch.pyw
 ```
 
+### Via Hermes Agent
+
+```bash
+# Hermes can install the launcher for you
+hermes tool install hermes-launcher
+```
+
 ## Auto-Discovery
 
 The launcher can automatically discover services from your Hermes installation:
@@ -51,11 +58,72 @@ The launcher can automatically discover services from your Hermes installation:
 
 ## Configuration
 
-Configuration is stored in `~/.hermes/launcher-config.json`.
+Configuration is stored in `~/.hermes/launcher-config.json`:
+
+```json
+{
+  "gateway": {
+    "name": "Hermes Gateway",
+    "port": 8653,
+    "health_url": "http://127.0.0.1:8653/health",
+    "script": "~/.local/bin/hermes-gateway",
+    "enabled": true,
+    "category": "core"
+  }
+}
+```
+
+## Building from Source
+
+### Requirements
+
+- Python 3.8+
+- tkinter (usually included with Python)
+
+### Build Windows Executable
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --windowed --name "HermesQuickLaunch" hermes_quick_launch.pyw
+```
+
+### Build Linux Package
+
+```bash
+# See packaging/ directory for scripts
+cd packaging
+./build-linux.sh
+```
+
+## Development
+
+### Project Structure
+
+```
+hermes-launcher/
+├── hermes_quick_launch.pyw    # Main application
+├── Hermes-Quick-Launch.bat    # Windows launcher
+├── README.md                  # This file
+├── LICENSE                    # MIT License
+└── packaging/                 # Build scripts
+    ├── build-windows.ps1
+    └── build-linux.sh
+```
 
 ## License
 
 MIT License - see [LICENSE](LICENSE) file
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
+
+## Support
+
+- [Hermes Agent Documentation](https://github.com/Automata-intelligentsia/hermes-agent)
+- [Issue Tracker](https://github.com/Automata-intelligentsia/hermes-launcher/issues)
 
 ---
 
