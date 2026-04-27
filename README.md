@@ -1,4 +1,4 @@
-# Hermes Quick Launch for Hermes Agent
+# Quick Launch for Hermes Agent
 
 A sleek, dark-themed GUI launcher for managing your Hermes Agent ecosystem services.
 
@@ -13,38 +13,58 @@ A sleek, dark-themed GUI launcher for managing your Hermes Agent ecosystem servi
 
 ## Default Services
 
-| Service | Port | Category |
-|---------|------|----------|
-| Hermes Gateway | 8653 | Core |
-| Hermes Dashboard | 9119 | Core |
-| Hermes Workspace | 3000 | Core |
-| Hermes API Server | 8000 | Core |
-| Honcho Memory | 8000 | Memory |
+### Core Services
+| Service | Port | Status |
+|---------|------|--------|
+| Hermes Gateway | 8653 | Enabled |
+| Hermes Dashboard | 9119 | Enabled |
+| Hermes Workspace | 3000 | Enabled |
+| Honcho Memory | 8000 | Enabled |
+
+### AI Agents (Pre-loaded, disabled by default)
+| Agent | Role |
+|-------|------|
+| CEO | Chief Executive Officer |
+| CTO | Chief Technology Officer |
+| CFO | Chief Financial Officer |
+| COO | Chief Operating Officer |
+| CIO | Chief Information Officer |
+| CMO | Chief Marketing Officer |
+| Head of AI Innovation | AI Strategy |
+| Head of BizDev | Business Development |
+| Lead Developer | Development Lead |
+| Frontend Developer | UI/UX Development |
+| Data Engineer | Data Infrastructure |
+| QA Engineer | Quality Assurance |
+| UX Designer | User Experience |
+| Graphic Designer | Visual Design |
+| Content Strategist | Content Strategy |
+| Social Media Manager | Social Media |
+| Cold Outreach | Sales Outreach |
+| Customer Service | Support |
+| Project Manager | Project Coordination |
+| Personal Assistant | Executive Support |
+| Presentation Designer | Deck Creation |
+| SwarmClaw | Agent Orchestration |
+| ZeroClaw | Autonomous Agent |
 
 ## Installation
 
 ### Windows
 
-1. Download the latest release from [GitHub Releases](https://github.com/Automata-intelligentsia/hermes-launcher/releases)
+1. Download the latest release from [GitHub Releases](https://github.com/Automata-intelligentsia/quick-launch-hermes/releases)
 2. Extract the ZIP file
-3. Double-click `Hermes-Quick-Launch.bat`
+3. Double-click `Quick-Launch.bat`
 
 ### Linux/WSL
 
 ```bash
 # Clone the repository
-git clone https://github.com/Automata-intelligentsia/hermes-launcher.git
-cd hermes-launcher
+git clone https://github.com/Automata-intelligentsia/quick-launch-hermes.git
+cd quick-launch-hermes
 
 # Run the launcher
-python3 hermes_quick_launch.pyw
-```
-
-### Via Hermes Agent
-
-```bash
-# Hermes can install the launcher for you
-hermes tool install hermes-launcher
+python3 quick_launch.pyw
 ```
 
 ## Auto-Discovery
@@ -58,20 +78,7 @@ The launcher can automatically discover services from your Hermes installation:
 
 ## Configuration
 
-Configuration is stored in `~/.hermes/launcher-config.json`:
-
-```json
-{
-  "gateway": {
-    "name": "Hermes Gateway",
-    "port": 8653,
-    "health_url": "http://127.0.0.1:8653/health",
-    "script": "~/.local/bin/hermes-gateway",
-    "enabled": true,
-    "category": "core"
-  }
-}
-```
+Configuration is stored in `~/.hermes/launcher-config.json`.
 
 ## Building from Source
 
@@ -84,7 +91,7 @@ Configuration is stored in `~/.hermes/launcher-config.json`:
 
 ```bash
 pip install pyinstaller
-pyinstaller --onefile --windowed --name "HermesQuickLaunch" hermes_quick_launch.pyw
+pyinstaller --onefile --windowed --name "QuickLaunch" quick_launch.pyw
 ```
 
 ### Build Linux Package
@@ -100,12 +107,12 @@ cd packaging
 ### Project Structure
 
 ```
-hermes-launcher/
-├── hermes_quick_launch.pyw    # Main application
-├── Hermes-Quick-Launch.bat    # Windows launcher
-├── README.md                  # This file
-├── LICENSE                    # MIT License
-└── packaging/                 # Build scripts
+quick-launch-hermes/
+├── quick_launch.pyw          # Main application
+├── Quick-Launch.bat          # Windows launcher
+├── README.md                 # This file
+├── LICENSE                   # MIT License
+└── packaging/                # Build scripts
     ├── build-windows.ps1
     └── build-linux.sh
 ```
@@ -123,7 +130,7 @@ MIT License - see [LICENSE](LICENSE) file
 ## Support
 
 - [Hermes Agent Documentation](https://github.com/Automata-intelligentsia/hermes-agent)
-- [Issue Tracker](https://github.com/Automata-intelligentsia/hermes-launcher/issues)
+- [Issue Tracker](https://github.com/Automata-intelligentsia/quick-launch-hermes/issues)
 
 ---
 
