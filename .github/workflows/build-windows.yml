@@ -1,0 +1,61 @@
+name: Build Windows Executable
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+    
+    - name: Build executable
+      run: |
+        pyinstaller --onefile --windowed --name "QuickLaunch" --add-data="Quick-Launch.bat;." --add-data="README.md;." --add-data="LICENSE;." quick_launch.pyw
+    
+    - name: Create distribution
+      run: |
+        mkdir dist\QuickLaunch-Windows
+        copy dist\QuickLaunch.exe dist\QuickLaunch-Windows\
+        copy Quick-Launch.bat dist\QuickLaunch-Windows\
+        copy README.md dist\QuickLaunch-Windows\
+        copy LICENSE dist\QuickLaunch-Windows\
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: QuickLaunch-Windows
+        path: dist/QuickLaunch-Windows/
+    
+    - name: Create Release ZIP
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        cd dist
+        Compress-Archive -Path QuickLaunch-Windows\* -DestinationPath QuickLaunch-Windows.zip
+    
+    - name: Upload Release Asset
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/QuickLaunch-Windows.zip
+        tag_name: v${{ github.run_number }}
+        name: Release ${{ github.run_number }}
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
