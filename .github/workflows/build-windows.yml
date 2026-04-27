@@ -26,7 +26,7 @@ jobs:
     
     - name: Build executable
       run: |
-        pyinstaller --onefile --windowed --name "QuickLaunch" --add-data="Quick-Launch.bat;." --add-data="README.md;." --add-data="LICENSE;." quick_launch.pyw
+        pyinstaller --onefile --windowed --name "QuickLaunch" --add-data="Quick-Launch.bat;." --add-data="README.md;." --add-data="LICENSE;." hermes_quick_launch.pyw
     
     - name: Create distribution
       run: |
