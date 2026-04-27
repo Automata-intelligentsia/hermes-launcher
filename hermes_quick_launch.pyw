@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Hermes Quick Launch - Single-file launcher for Hermes Agent ecosystem
+Quick Launch for Hermes Agent - Single-file launcher for Hermes Agent ecosystem
 A sleek, dark-themed GUI for managing Hermes services with auto-discovery
 """
 
@@ -59,14 +59,6 @@ DEFAULT_SERVICES = {
         "enabled": True,
         "category": "core"
     },
-    "api_server": {
-        "name": "Hermes API Server",
-        "port": 8000,
-        "health_url": "http://127.0.0.1:8000/health",
-        "script": "~/.local/bin/hermes-api-server",
-        "enabled": True,
-        "category": "core"
-    },
     "honcho": {
         "name": "Honcho Memory",
         "port": 8000,
@@ -74,6 +66,190 @@ DEFAULT_SERVICES = {
         "script": "cd ~/honcho && nohup uv run fastapi dev src/main.py --port 8000 > /tmp/honcho.log 2>&1 &",
         "enabled": True,
         "category": "memory"
+    },
+    "swarmclaw": {
+        "name": "SwarmClaw",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/swarmclaw",
+        "enabled": False,
+        "category": "agents"
+    },
+    "zeroclaw": {
+        "name": "ZeroClaw",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/zeroclaw",
+        "enabled": False,
+        "category": "agents"
+    },
+    "ceo": {
+        "name": "CEO Agent",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/ceo",
+        "enabled": False,
+        "category": "agents"
+    },
+    "cto": {
+        "name": "CTO Agent",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/cto",
+        "enabled": False,
+        "category": "agents"
+    },
+    "cfo": {
+        "name": "CFO Agent",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/cfo",
+        "enabled": False,
+        "category": "agents"
+    },
+    "coo": {
+        "name": "COO Agent",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/coo",
+        "enabled": False,
+        "category": "agents"
+    },
+    "cio": {
+        "name": "CIO Agent",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/cio",
+        "enabled": False,
+        "category": "agents"
+    },
+    "cmo": {
+        "name": "CMO Agent",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/cmo",
+        "enabled": False,
+        "category": "agents"
+    },
+    "cold-outreach": {
+        "name": "Cold Outreach Agent",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/cold-outreach",
+        "enabled": False,
+        "category": "agents"
+    },
+    "content-strategist": {
+        "name": "Content Strategist",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/content-strategist",
+        "enabled": False,
+        "category": "agents"
+    },
+    "customer-service": {
+        "name": "Customer Service Agent",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/customer-service",
+        "enabled": False,
+        "category": "agents"
+    },
+    "data-engineer": {
+        "name": "Data Engineer",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/data-engineer",
+        "enabled": False,
+        "category": "agents"
+    },
+    "frontend-developer": {
+        "name": "Frontend Developer",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/frontend-developer",
+        "enabled": False,
+        "category": "agents"
+    },
+    "graphic-designer": {
+        "name": "Graphic Designer",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/graphic-designer",
+        "enabled": False,
+        "category": "agents"
+    },
+    "head-of-ai-innovation": {
+        "name": "Head of AI Innovation",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/head-of-ai-innovation",
+        "enabled": False,
+        "category": "agents"
+    },
+    "head-of-bizdev": {
+        "name": "Head of BizDev",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/head-of-bizdev",
+        "enabled": False,
+        "category": "agents"
+    },
+    "lead-developer": {
+        "name": "Lead Developer",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/lead-developer",
+        "enabled": False,
+        "category": "agents"
+    },
+    "personal-assistant": {
+        "name": "Personal Assistant",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/personal-assistant",
+        "enabled": False,
+        "category": "agents"
+    },
+    "presentation-designer": {
+        "name": "Presentation Designer",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/presentation-designer",
+        "enabled": False,
+        "category": "agents"
+    },
+    "project-manager": {
+        "name": "Project Manager",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/project-manager",
+        "enabled": False,
+        "category": "agents"
+    },
+    "qa-engineer": {
+        "name": "QA Engineer",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/qa-engineer",
+        "enabled": False,
+        "category": "agents"
+    },
+    "social-media-manager": {
+        "name": "Social Media Manager",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/social-media-manager",
+        "enabled": False,
+        "category": "agents"
+    },
+    "ux-designer": {
+        "name": "UX Designer",
+        "port": 0,
+        "health_url": "",
+        "script": "~/.local/bin/ux-designer",
+        "enabled": False,
+        "category": "agents"
     },
 }
 
@@ -130,12 +306,12 @@ class ModernButton(tk.Canvas):
             self.command()
 
 
-class HermesQuickLaunch:
+class QuickLaunchApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Hermes Quick Launch")
-        self.root.geometry("900x650")
-        self.root.minsize(800, 500)
+        self.root.title("Quick Launch for Hermes Agent")
+        self.root.geometry("1000x700")
+        self.root.minsize(900, 500)
         self.root.configure(bg=THEME["bg"])
         
         # Configure ttk styles
@@ -175,7 +351,11 @@ class HermesQuickLaunch:
         if os.path.exists(CONFIG_FILE):
             try:
                 with open(CONFIG_FILE, 'r') as f:
-                    return json.load(f)
+                    saved = json.load(f)
+                    # Merge with defaults to get any new services
+                    merged = DEFAULT_SERVICES.copy()
+                    merged.update(saved)
+                    return merged
             except Exception as e:
                 print(f"Error loading config: {e}")
         return DEFAULT_SERVICES.copy()
@@ -202,7 +382,7 @@ class HermesQuickLaunch:
         title_frame.pack(side=tk.LEFT)
         
         tk.Label(title_frame, text="⚡", font=("Inter", 24), bg=THEME["bg"], fg=THEME["accent"]).pack(side=tk.LEFT)
-        tk.Label(title_frame, text="Hermes Quick Launch", font=THEME["font_title"], 
+        tk.Label(title_frame, text="Quick Launch", font=THEME["font_title"], 
                 bg=THEME["bg"], fg=THEME["fg"]).pack(side=tk.LEFT, padx=(10, 0))
         tk.Label(title_frame, text="for Hermes Agent", font=("Inter", 10), 
                 bg=THEME["bg"], fg=THEME["accent"]).pack(side=tk.LEFT, padx=(5, 0))
@@ -240,19 +420,41 @@ class HermesQuickLaunch:
         ModernButton(actions, "↻ Health Check", self.manual_health_check, bg_color=THEME["accent2"]).pack(side=tk.LEFT, padx=(0, 8))
         ModernButton(actions, "＋ Auto-Discover", self.auto_discover_services, bg_color="#059669").pack(side=tk.LEFT)
         
-        # Services grid
-        services_frame = tk.Frame(parent, bg=THEME["bg"])
-        services_frame.pack(fill=tk.BOTH, expand=True)
+        # Create scrollable frame for services
+        canvas = tk.Canvas(parent, bg=THEME["bg"], highlightthickness=0)
+        scrollbar = ttk.Scrollbar(parent, orient="vertical", command=canvas.yview)
+        scrollable_frame = tk.Frame(canvas, bg=THEME["bg"])
+        
+        scrollable_frame.bind(
+            "<Configure>",
+            lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+        
+        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+        
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
         
         # Category headers
         self.service_vars = {}
         self.status_labels = {}
         self.service_cards = {}
         
-        categories = {"core": "Core Services", "memory": "Memory & Storage", "custom": "Custom Services"}
+        categories = {
+            "core": "🔥 Core Services", 
+            "memory": "🧠 Memory & Storage", 
+            "agents": "🤖 AI Agents",
+            "custom": "⚙️ Custom Services"
+        }
         
         for cat_key, cat_name in categories.items():
-            cat_frame = tk.LabelFrame(services_frame, text=cat_name, bg=THEME["card_bg"], 
+            # Check if any services in this category
+            cat_services = {k: v for k, v in self.services.items() if v.get("category", "custom") == cat_key}
+            if not cat_services:
+                continue
+                
+            cat_frame = tk.LabelFrame(scrollable_frame, text=cat_name, bg=THEME["card_bg"], 
                                      fg=THEME["fg"], font=THEME["font_header"], bd=1,
                                      highlightbackground=THEME["border"], highlightthickness=1)
             cat_frame.pack(fill=tk.X, pady=5, padx=2)
@@ -276,7 +478,9 @@ class HermesQuickLaunch:
         
         tk.Label(info_frame, text=svc["name"], font=THEME["font_header"], 
                 bg=THEME["card_bg"], fg=THEME["fg"]).pack(anchor=tk.W)
-        tk.Label(info_frame, text=f"Port {svc['port']} • {svc.get('category', 'custom')}", 
+        
+        port_info = f"Port {svc['port']}" if svc.get('port', 0) > 0 else "No port"
+        tk.Label(info_frame, text=f"{port_info} • {svc.get('category', 'custom')}", 
                 font=("Inter", 8), bg=THEME["card_bg"], fg="#888").pack(anchor=tk.W)
         
         # Controls
@@ -311,7 +515,7 @@ class HermesQuickLaunch:
             highlightbackground=THEME["border"], highlightthickness=1
         )
         self.log_text.pack(fill=tk.BOTH, expand=True)
-        self.log("Hermes Quick Launch initialized. Health monitor active.")
+        self.log("Quick Launch for Hermes Agent initialized. Health monitor active.")
     
     def build_settings_tab(self, parent):
         # Settings content
@@ -366,9 +570,19 @@ class HermesQuickLaunch:
             pass
     
     def check_service_health(self, key, svc):
+        if not svc.get("health_url"):
+            # For agents without health URLs, check if process is running
+            try:
+                script_name = os.path.basename(svc["script"])
+                result = subprocess.run(["pgrep", "-f", script_name], 
+                                      capture_output=True, timeout=2)
+                return result.returncode == 0
+            except:
+                return False
+        
         try:
             req = urllib.request.Request(svc["health_url"], method='GET')
-            req.add_header('User-Agent', 'HermesLauncher/1.0')
+            req.add_header('User-Agent', 'QuickLaunch/1.0')
             with urllib.request.urlopen(req, timeout=3) as resp:
                 return resp.status == 200
         except:
@@ -377,11 +591,12 @@ class HermesQuickLaunch:
     def update_health_display(self):
         for key, svc in self.services.items():
             healthy = self.check_service_health(key, svc)
-            label = self.status_labels[key]
-            if healthy:
-                label.config(text="●", fg=THEME["success"])
-            else:
-                label.config(text="○", fg=THEME["error"])
+            label = self.status_labels.get(key)
+            if label:
+                if healthy:
+                    label.config(text="●", fg=THEME["success"])
+                else:
+                    label.config(text="○", fg=THEME["error"])
     
     def health_monitor_loop(self):
         while self.health_check_running:
@@ -392,7 +607,7 @@ class HermesQuickLaunch:
                     continue
                 
                 healthy = self.check_service_health(key, svc)
-                if not healthy:
+                if not healthy and svc.get("health_url"):  # Only auto-restart services with health URLs
                     self.log(f"⚠ {svc['name']} is down. Auto-restarting...")
                     self.restart_service(key, silent=True)
             
@@ -420,7 +635,7 @@ class HermesQuickLaunch:
         daemon_dir = os.path.expanduser("~/.local/bin")
         if os.path.exists(daemon_dir):
             for file in os.listdir(daemon_dir):
-                if file.startswith("hermes-") and file not in ["hermes-gateway", "hermes-dashboard", "hermes-workspace"]:
+                if file.startswith("hermes-") and file not in ["hermes-gateway", "hermes-dashboard", "hermes-workspace", "hermes-autostart.sh", "hermes-gateway-daemon.sh"]:
                     service_name = file.replace("hermes-", "")
                     if service_name not in self.services:
                         # Auto-add discovered service
@@ -517,7 +732,6 @@ class HermesQuickLaunch:
             "gateway": "~/.hermes/logs/gateway-daemon.log",
             "dashboard": "~/.hermes/logs/dashboard-daemon.log",
             "workspace": "~/.hermes/logs/workspace-daemon.log",
-            "api_server": "~/.hermes/logs/api-server-daemon.log",
             "honcho": "/tmp/honcho.log"
         }
         path = os.path.expanduser(log_paths.get(key, "~/.hermes/logs/launcher-health.log"))
@@ -596,10 +810,10 @@ class HermesQuickLaunch:
                 lines = [line for line in log_content.split('\n')
                         if any(x in line for x in ['ERROR', 'FAIL', '✗', '⚠', 'Error'])]
                 content = '\n'.join(lines)
-                default_name = f"hermes-errors-{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+                default_name = f"quick-launch-errors-{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
             else:
                 content = log_content
-                default_name = f"hermes-logs-{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+                default_name = f"quick-launch-logs-{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
             
             if not content.strip():
                 messagebox.showwarning("Empty", "No content to save.")
@@ -645,7 +859,7 @@ def main():
     except:
         pass
     
-    app = HermesQuickLaunch(root)
+    app = QuickLaunchApp(root)
     root.protocol("WM_DELETE_WINDOW", app.on_closing)
     root.mainloop()
 
